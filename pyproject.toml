@@ -1,0 +1,24 @@
+[project]
+name = "pyes-search"
+version = "0.1.0"
+description = "Test-time search over a frozen language model's P(Yes) for fill-in-the-blank decisions"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.14",
+    "transformers==5.17.0",
+    "flash-linear-attention==0.5.2",
+    "fla-core==0.5.2",
+    "pillow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "modal"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pyes_search"]
